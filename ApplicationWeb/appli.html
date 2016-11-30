@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
+<body class="container">
     <nav class="nav-extended grey darken-4">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo"><i class="material-icons right amber-text text-accent-4">settings</i><span class="amber-text text-accent-4">A</span>pplication de <span class="amber-text text-accent-4">C</span>onfiguration</a>
@@ -20,9 +20,9 @@
                 <li class="active black"><a class="amber-text text-accent-4" href="#"><i class="material-icons right amber-text text-accent-4">view_module</i><span class="amber-text text-accent-4">C</span>onfigurateur</a></li>
                 <li><a href="#"><i class="material-icons right amber-text text-accent-4">info</i><span class="amber-text text-accent-4">A</span>ide</a></li>
             </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li class="active"><a class="amber-text text-accent-4" href="#"><i class="material-icons right amber-text text-accent-4">view_module</i><span class="amber-text text-accent-4">C</span>onfigurateur</a></li>
-                <li><a href="#"><i class="material-icons right amber-text text-accent-4">info</i><span class="amber-text text-accent-4">A</span>ide</a></li>
+            <ul class="side-nav grey darken-4" id="mobile-demo">
+                <li class="active black"><a class="amber-text text-accent-4" href="#"><i class="material-icons right amber-text text-accent-4">view_module</i><span class="amber-text text-accent-4">C</span>onfigurateur</a></li>
+                <li><a class="grey-text text-lighten-3" href="#"><i class="material-icons right amber-text text-accent-4">info</i><span class="amber-text text-accent-4">A</span>ide</a></li>
             </ul>
 
             <ul class="tabs tabs-transparent">
@@ -32,8 +32,50 @@
         </div>
     </nav>
 
+    <div id="modalConf" class="modal modal-fixed-footer grey darken-4">
+        <form name="modalForm">
+            <div class="modal-content white-text">
+                <h4 class="amber-text text-accent-4">Configuration</h4>
+                
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+            </div>
+        </form>
+    </div>
+
     <div id="widget" class="col s12">
-        Test 1
+        <div class="row center">
+            <div class="col s12">
+                <h4><span class="amber-text text-accent-4">C</span>onfiguration des <span class="amber-text text-accent-4">W</span>idgets</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">Widget RER</span>
+                        <p>
+                            Affiche les 4 prochains rer B et D, dans les 2 directions (nord, sud) en précisant les destinations.
+                        </p>
+                    </div>
+                    <div class="card-action amber-text text-accent-4">
+                        <a href="#modalConf">Configurer</a>
+                    </div>
+                </div>
+                <div class="card grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">Widget RER</span>
+                        <p>
+                            Affiche les 4 prochains rer B et D, dans les 2 directions (nord, sud) en précisant les destinations.
+                        </p>
+                    </div>
+                    <div class="card-action amber-text text-accent-4">
+                        <a href="#modalConf">Configurer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="dispo" class="col s12">
@@ -45,7 +87,9 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Le groupe</h5>
-                    <p class="grey-text text-lighten-4">Vincent FALCIONI - GUISLAIN Silvère - GÉRÔME Alexis</p>
+                    <p class="grey-text text-lighten-4">Vincent FALCIONI</p>
+                    <p class="grey-text text-lighten-4">Silvère GUISLAIN</p>
+                    <p class="grey-text text-lighten-4">Alexis GÉRÔME</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Liens utiles</h5>
@@ -58,7 +102,8 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2014 Copyright Text
+                <a class="left grey-text text-lighten-3" href="#">Nous contacter</a>
+                <span class="right grey-text text-lighten-3">2014 Copyright Text</span>
             </div>
         </div>
     </footer>
