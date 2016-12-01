@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Version media-type="application/vnd.ez.api.Version+xml" href="/api/ezp/v2/content/objects/102/versions/1">
+	<VersionInfo>
+		<id>607</id>
+		<versionNo>1</versionNo>
+		<status>PUBLISHED</status>
+		<modificationDate>2016-11-29T23:40:54+00:00</modificationDate>
+		<Creator media-type="application/vnd.ez.api.User+xml" href="/api/ezp/v2/user/users/14"/>
+		<creationDate>2016-11-29T23:40:49+00:00</creationDate>
+		<initialLanguageCode>eng-GB</initialLanguageCode>
+		<languageCodes>eng-GB</languageCodes>
+		<names>
+			<value languageCode="eng-GB">Widget Météo</value>
+		</names>
+		<Content media-type="application/vnd.ez.api.ContentInfo+xml" href="/api/ezp/v2/content/objects/102"/>
+	</VersionInfo>
+	<Fields>
+		<field>
+			<id>341</id>
+			<fieldDefinitionIdentifier>title</fieldDefinitionIdentifier>
+			<languageCode>eng-GB</languageCode>
+			<fieldValue>Widget Météo</fieldValue>
+		</field>
+		<field>
+			<id>342</id>
+			<fieldDefinitionIdentifier>city</fieldDefinitionIdentifier>
+			<languageCode>eng-GB</languageCode>
+			<fieldValue>
+				<value key="latitude">48.936181</value>
+				<value key="longitude">2.357443</value>
+				<value key="address">sqli saint-denis</value>
+			</fieldValue>
+		</field>
+		<field>
+			<id>343</id>
+			<fieldDefinitionIdentifier>description</fieldDefinitionIdentifier>
+			<languageCode>eng-GB</languageCode>
+			<fieldValue>
+				<value key="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;section
+					xmlns=&quot;http://docbook.org/ns/docbook&quot;
+					xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+					xmlns:ezxhtml=&quot;http://ez.no/xmlns/ezpublish/docbook/xhtml&quot;
+					xmlns:ezcustom=&quot;http://ez.no/xmlns/ezpublish/docbook/custom&quot; version=&quot;5.0-variant ezpublish-1.0&quot;&gt;&lt;para&gt;météo sur l'agence de saint-denis&lt;/para&gt;&lt;/section&gt;
+
+				</value>
+				<value key="xhtml5edit">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;section
+					xmlns=&quot;http://ez.no/namespaces/ezpublish5/xhtml5/edit&quot;&gt;&lt;p&gt;météo sur l'agence de saint-denis&lt;/p&gt;&lt;/section&gt;
+
+				</value>
+			</fieldValue>
+		</field>
+	</Fields>
+	<Relations media-type="application/vnd.ez.api.RelationList+xml" href="/api/ezp/v2/content/objects/102/versions/1/relations"/>
+</Version>
