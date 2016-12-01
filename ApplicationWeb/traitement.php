@@ -1,30 +1,27 @@
 <?PHP
-if (isset($_POST['station']) && isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['address']))
+if (isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['station']) && isset($_POST['title']) && isset($_POST['widjet']))
 {
-	$export = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"; 
-	$export="<configurationWidjetRER>";
+	$station = $_POST['title'];
+    $latitude = $_POST['latitude'];
+    $longitude = $_POST['longitude'];
+    $adresse = $_POST['address'];
 
-	while($row = mysqli_fetch_array($result))
-	{   
-	    $export.="<configurationWidjetRER>";
-	    $station=$_POST['station'];
-	    $latitude=$_POST['latitude'];
-	    $longitude=$_POST['longitude'];
-	    $adresse=$_POST['address'];
+    switch ($_POST['widjet']) {
+    	case 'rer':
+    		$fichier = 'XML/widRER.xml';
+    		$widjet = $_POST['widjet'];
+    		break;
 
-	    $export.="	<field>
-	    				<id>326</id>
-	    				<fieldDefinitionIdentifier>'$station'</fieldDefinitionIdentifier>
-	    				<fieldValue>
-	    					<value key=\"latitude\">'$latitude'</value>
-	    					<value key=\"longitude\">'$longitude'</value>
-	    					<value key=\"address\">'$adresse'</value>
-	    				</fieldValue>
-	    			</field>";
-	    $export.="</configurationWidjetRER>";
-	}
-	$export.="</configurationWidjetRER>";
+    	case 'meteo':
+    	 	$fichier = 'XML/widMeteo.xml';
+    		$widjet = $_POST['widjet'];
+    	 	break;
 
-	file_put_contents("export.xml", $export);
-	echo "<a href='export.xml' target='_blank'>Export database as XML</a>";
+    	case 'traffic':
+    		$fichier = 'XML/widTraffic.xml';
+    		$widjet = $_POST['widjet'];
+    		break;
+    }
+    $xml = simplexml_load_file($fichier);
+    print_r($xml);
 }
