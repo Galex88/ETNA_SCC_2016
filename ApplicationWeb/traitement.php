@@ -24,7 +24,6 @@ if (isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['sta
     }
     $xml = simplexml_load_file($fichier);
     $test = new SimpleXMLElement($xml);
+    var_dump($test);
     echo $test->field[0]->fieldDefinitionIdentifier;
-    /*regexp
-    //*/
 }
