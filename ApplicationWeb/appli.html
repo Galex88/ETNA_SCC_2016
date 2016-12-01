@@ -6,6 +6,7 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,14 +33,171 @@
         </div>
     </nav>
 
-    <div id="modalConf" class="modal modal-fixed-footer grey darken-4">
-        <form name="modalForm">
+    <div id="modalConfRER" class="modal modal grey darken-4">
+        <form name="modalForm" action="traitement.php" method="post">
             <div class="modal-content white-text">
-                <h4 class="amber-text text-accent-4">Configuration</h4>
-                
+                <div class="row">
+                    <div class="col s10 offset-l1 center">
+                        <h4 class="amber-text text-accent-4">Configuration</h4>
+                        <input type="hidden" name="widget" value="rer"/>
+                    </div>
+                </div>
+                <br />
+                <hr class="amber-text text-accent-4" />
+                <br />
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">title</i>
+                        <input id="icon_title" type="text" name="title"/>
+                        <label for="icon_title">Titre</label>
+                    </div>
+                </div>
+                <br />
+                <hr class="amber-text text-accent-4" />
+                <br />
+                <div class="row">
+                    <div class="input-field col s5">
+                        <i class="material-icons prefix">place</i>
+                        <input id="icon_longitude1" type="text" name="longitude1"/>
+                        <label for="icon_longitude1">Longitude RER B</label>
+                    </div>
+                    <div class="input-field col s5 offset-l1">
+                        <input id="latitude1" type="text" name="latitude1"/>
+                        <label for="latitude1">Latitude RER B</label>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">public</i>
+                        <input id="icon_station1" type="text" name="station1"/>
+                        <label for="icon_station1">Station RER B</label>
+                    </div>
+                </div>
+                <br />
+                <hr class="amber-text text-accent-4"/>
+                <br />
+                <div class="row">
+                    <div class="input-field col s5">
+                        <i class="material-icons prefix">place</i>
+                        <input id="icon_longitude2" type="text" name="longitude2" />
+                        <label for="icon_longitude2">Longitude RER D</label>
+                    </div>
+                    <div class="input-field col s5 offset-l1">
+                        <input id="latitude2" type="text" name="latitude2" />
+                        <label for="latitude2">Latitude RER D</label>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">public</i>
+                        <input id="icon_station2" type="text" name="station2" />
+                        <label for="icon_station2">Station RER D</label>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                <button type="reset" class="modal-action modal-close waves-effect waves-orange btn-flat"><i class="material-icons left">clear</i>Annuler</button>
+                <button type="submit" class="modal-action modal-close waves-effect waves-orange btn-flat"><i class="material-icons left">done</i>Accepter</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="modalConfMeteo" class="modal modal grey darken-4">
+        <form name="modalForm" action="traitement.php" method="post">
+            <div class="modal-content white-text">
+                <div class="row">
+                    <div class="col s10 offset-l1 center">
+                        <h4 class="amber-text text-accent-4">Configuration</h4>
+                        <input type="hidden" name="widget" value="meteo" />
+                    </div>
+                </div>
+                <br />
+                <hr class="amber-text text-accent-4" />
+                <br />
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">title</i>
+                        <input id="icon_title" type="text" name="title" />
+                        <label for="icon_title">Titre</label>
+                    </div>
+                </div>
+                <br />
+                <hr class="amber-text text-accent-4" />
+                <br />
+                <div class="row">
+                    <div class="input-field col s5">
+                        <i class="material-icons prefix">place</i>
+                        <input id="icon_longitude" type="text" name="longitude" />
+                        <label for="icon_longitude">Longitude</label>
+                    </div>
+                    <div class="input-field col s5 offset-l1">
+                        <input id="latitude" type="text" name="latitude" />
+                        <label for="latitude">Latitude</label>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">public</i>
+                        <input id="icon_station" type="text" name="station" />
+                        <label for="icon_station">Station</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="modal-action modal-close waves-effect waves-orange btn-flat"><i class="material-icons left">clear</i>Annuler</button>
+                <button type="submit" class="modal-action modal-close waves-effect waves-orange btn-flat"><i class="material-icons left">done</i>Accepter</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="modalConfTraffic" class="modal modal grey darken-4">
+        <form name="modalForm" action="traitement.php" method="post">
+            <div class="modal-content white-text">
+                <div class="row">
+                    <div class="col s10 offset-l1 center">
+                        <h4 class="amber-text text-accent-4">Configuration</h4>
+                        <input type="hidden" name="widget" value="traffic" />
+                    </div>
+                </div>
+                <br />
+                <hr class="amber-text text-accent-4" />
+                <br />
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">title</i>
+                        <input id="icon_title" type="text" name="title" />
+                        <label for="icon_title">Titre</label>
+                    </div>
+                </div>
+                <br />
+                <hr class="amber-text text-accent-4" />
+                <br />
+                <div class="row">
+                    <div class="input-field col s5">
+                        <i class="material-icons prefix">place</i>
+                        <input id="icon_longitude" type="text" name="longitude" />
+                        <label for="icon_longitude">Longitude</label>
+                    </div>
+                    <div class="input-field col s5 offset-l1">
+                        <input id="latitude" type="text" name="latitude" />
+                        <label for="latitude">Latitude</label>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="input-field col s11">
+                        <i class="material-icons prefix">public</i>
+                        <input id="icon_station" type="text" name="station" />
+                        <label for="icon_station">Station</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="reset" class="modal-action modal-close waves-effect waves-orange btn-flat"><i class="material-icons left">clear</i>Annuler</button>
+                <button type="submit" class="modal-action modal-close waves-effect waves-orange btn-flat"><i class="material-icons left">done</i>Accepter</button>
             </div>
         </form>
     </div>
@@ -51,27 +209,113 @@
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m6">
-                <div class="card grey darken-4">
+            <div class="col s6 m6">
+                <div class="card small grey darken-4">
                     <div class="card-content white-text">
-                        <span class="card-title">Widget RER</span>
+                        <span class="card-title">Widget <span class="amber-text text-accent-4">RER</span></span>
                         <p>
                             Affiche les 4 prochains rer B et D, dans les 2 directions (nord, sud) en précisant les destinations.
                         </p>
                     </div>
                     <div class="card-action amber-text text-accent-4">
-                        <a href="#modalConf">Configurer</a>
+                        <a href="#modalConfRER" class="btn-flat"><i class="material-icons left">mode_edit</i>Configurer</a>
                     </div>
                 </div>
-                <div class="card grey darken-4">
+            </div>
+            <div class="col s6 m6">
+                <div class="card small grey darken-4">
                     <div class="card-content white-text">
-                        <span class="card-title">Widget RER</span>
+                        <span class="card-title">Widget <span class="amber-text text-accent-4">Digital</span></span>
                         <p>
-                            Affiche les 4 prochains rer B et D, dans les 2 directions (nord, sud) en précisant les destinations.
+                            Affiche aléatoirement un terme lié au milieu digital et sa définition sur un fond animé.
                         </p>
                     </div>
                     <div class="card-action amber-text text-accent-4">
-                        <a href="#modalConf">Configurer</a>
+                        <a href="#" class="btn-flat disabled"><i class="material-icons left">block</i>Non configurable</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 m6">
+                <div class="card small grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">Widget <span class="amber-text text-accent-4">Météo</span></span>
+                        <p>
+                            Affiche la météo d'aujourd'hui et des 3 prochains jours sur la ville ou se trouve le client.
+                        </p>
+                    </div>
+                    <div class="card-action amber-text text-accent-4">
+                        <a href="#modalConfMeteo" class="btn-flat"><i class="material-icons left">mode_edit</i>Configurer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m6">
+                <div class="card small grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">Widget <span class="amber-text text-accent-4">Traffic</span></span>
+                        <p>
+                            Affiche les temps de transport en voiture vers différents points clés, et affiche également une carte du traffic actuel autour du client.
+                        </p>
+                    </div>
+                    <div class="card-action amber-text text-accent-4">
+                        <a href="#modalConfTraffic" class="btn-flat"><i class="material-icons left">mode_edit</i>Configurer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 m6">
+                <div class="card small grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">Widget <span class="amber-text text-accent-4">Vidéo</span></span>
+                        <p>
+                            Affiche une vidéo aléatoire.
+                        </p>
+                    </div>
+                    <div class="card-action amber-text text-accent-4">
+                        <a href="#" class="btn-flat disabled"><i class="material-icons left">block</i>Non configurable</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m6">
+                <div class="card small grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">Widget <span class="amber-text text-accent-4">Stocks</span></span>
+                        <p>
+                            Affiche la tendance boursière actuelle de SQLI.
+                        </p>
+                    </div>
+                    <div class="card-action amber-text text-accent-4">
+                        <a href="#" class="btn-flat disabled"><i class="material-icons left">block</i>Non configurable</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 m6">
+                <div class="card small grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">Widget <span class="amber-text text-accent-4">Ticker</span></span>
+                        <p>
+                            Fait défiler les flux RSS de l'entreprise sur la partie basse de l'écran.
+                        </p>
+                    </div>
+                    <div class="card-action amber-text text-accent-4">
+                        <a href="#" class="btn-flat disabled"><i class="material-icons left">block</i>Non configurable</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m6">
+                <div class="card small grey darken-4">
+                    <div class="card-content white-text">
+                        <span class="card-title">Widget <span class="amber-text text-accent-4">Gitlab</span></span>
+                        <p>
+                            Affiche le nombre de commits effectués sur la plateforme Gitlab des 3 derniers mois.
+                        </p>
+                    </div>
+                    <div class="card-action amber-text text-accent-4">
+                        <a href="#" class="btn-flat disabled"><i class="material-icons left">block</i>Non configurable</a>
                     </div>
                 </div>
             </div>
@@ -86,13 +330,13 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Le groupe</h5>
+                    <h5 class="amber-text text-accent-4">Le groupe</h5>
                     <p class="grey-text text-lighten-4">Vincent FALCIONI</p>
                     <p class="grey-text text-lighten-4">Silvère GUISLAIN</p>
                     <p class="grey-text text-lighten-4">Alexis GÉRÔME</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Liens utiles</h5>
+                    <h5 class="amber-text text-accent-4">Liens utiles</h5>
                     <ul>
                         <li><a target="_blank" class="grey-text text-lighten-3" href="http://www.materializecss.com">Framework Materialize</a></li>
                         <li><a target="_blank" class="grey-text text-lighten-3" href="https://github.com/Galex88/ETNA_SCC_2016.git">GitHub</a></li>
