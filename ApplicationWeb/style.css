@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .input-field .prefix.active,
 input:not([type]):focus:not([readonly]) + label,
 input[type=text]:focus:not([readonly]) + label,
@@ -34,14 +33,15 @@ textarea.materialize-textarea:focus:not([readonly])
   border-bottom: 1px solid #ffab00;
   box-shadow: 0 1px 0 0 #ffab00;
 }
-=======
-.switch label input[type=checkbox]:checked + .lever:after {
+
+.switch label input[type=checkbox]:checked + .lever:after
+{
   background-color: #ff6f00;
   border-color: #ff6f00;
   left: 24px;
 }
-.switch label input[type=checkbox]:checked + .lever {
+
+.switch label input[type=checkbox]:checked + .lever 
+{
   background-color: #ffa000;
 }
-
->>>>>>> origin/master
