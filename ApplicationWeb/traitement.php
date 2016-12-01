@@ -1,47 +1,62 @@
 <?php
-/*if (isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['station']) && isset($_POST['title']) && isset($_POST['widjet']))
-{*/
-    $fichier = '';
-    $station = '';
-    $latitude1 = '';
-    $latitude2 = '';
-    $longitude2 = '';
-    $adresse = '';
-    $widjet = '';
+$fichier = '';
+$station = '';
+$latitude = '';
+$latitude2 = '';
+$longitude = '';
+$longitude2 = '';
+$adresse = '';
+$adresse2 = '';
+$widget = '';
 
-    switch ($_POST['widget']) {
-    	case 'rer':
-    		$fichier = 'XML/widRER1.xml';
-            $station = $_POST['title'];
-            $latitude1 = $_POST['latitude1'];
-            $latitude2 = $_POST['latitude2'];
-            $longitude2 = $_POST['longitude2'];
-            $adresse = $_POST['station'];
-    		$widjet = $_POST['widget'];
-    		break;
+switch ($_POST['widget']) {
+	case 'rer':
+		$fichier = 'XML/widRER1.xml';
+        $station = $_POST['title'];
+        $latitude = $_POST['latitude1'];
+        $latitude2 = $_POST['latitude2'];
+        $longitude = $_POST['longitude1'];
+        $longitude2 = $_POST['longitude2'];
+        $adresse = $_POST['station1'];
+        $adresse2 = $_POST['station2'];
+		$widget = $_POST['widget'];
+        $xml = simplexml_load_file($fichier);
+        $wtitle = ($xml->Fields->field[0]->fieldDefinitionIdentifier[0]);
+        print($wtitle);
+        $wlat = ($xml->Fields->field[3]->fieldValue[0]->value[0]);
+        print(" Lattitude".$wlat);
+        $wlon = ($xml->Fields->field[3]->fieldValue[0]->value[1]);
+        print(" longitude".$wlon);
+        $wstation = ($xml->Fields->field[3]->fieldDefinitionIdentifier[0]);
+        print(" ".$wstation);
+		break;
 
-    	case 'meteo':
-    	 	$fichier = 'XML/widMeteo.xml';
-            $station = $_POST['title'];
-            $latitude = $_POST['latitude'];
-            $longitude = $_POST['longitude'];
-            $adresse = $_POST['station'];
-    		$widjet = $_POST['widget'];
-    	 	break;
+	case 'meteo':
+	 	$fichier = 'XML/widMeteo.xml';
+        $station = $_POST['title'];
+        $latitude = $_POST['latitude'];
+        $longitude = $_POST['longitude'];
+        $adresse = $_POST['station'];
+		$widget = $_POST['widget'];
+        $xml = simplexml_load_file($fichier);
+        $wtitle = ($xml->Fields->field[0]->fieldDefinitionIdentifier[0]);
+        print($wtitle);
 
-    	case 'traffic':
-    		$fichier = 'XML/widTraffic.xml';
-            $station = $_POST['title'];
-            $latitude = $_POST['latitude'];
-            $longitude = $_POST['longitude'];
-            $adresse = $_POST['station'];
-    		$widjet = $_POST['widget'];
-    		break;
-    }
-    $xml = simplexml_load_file($fichier);
-    //$test = new SimpleXMLElement($xml);
-    print_r ($xml->Fields->field->fieldDefinitionIdentifier[0]);
-    //print_r($xml);
-    //var_dump($xml);
-    //echo $test->field[0]->fieldDefinitionIdentifier;
-//}
+	 	break;
+
+	case 'traffic':
+		$fichier = 'XML/widTraffic.xml';
+        $station = $_POST['title'];
+        $latitude = $_POST['latitude'];
+        $longitude = $_POST['longitude'];
+        $adresse = $_POST['station'];
+		$widget = $_POST['widget'];
+        $xml = simplexml_load_file($fichier);
+        $wtitle = ($xml->Fields->field[0]->fieldDefinitionIdentifier[0]);
+        print($wtitle);
+
+}
+
+
+//$wlat = ($xml->Fields->field[3]->fieldValue[0]);
+//print(" ".$wlat);
