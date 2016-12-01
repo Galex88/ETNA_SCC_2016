@@ -36,7 +36,7 @@ textarea.materialize-textarea:focus:not([readonly])
 
 .switch label input[type=checkbox]:checked + .lever:after
 {
-  background-color: #ff6f00;
+  background-color: #ffab00;
   border-color: #ff6f00;
   left: 24px;
 }
@@ -44,4 +44,9 @@ textarea.materialize-textarea:focus:not([readonly])
 .switch label input[type=checkbox]:checked + .lever 
 {
   background-color: #ffa000;
+}
+
+.displayInlineRadio
+{
+    display: inline-flex;
 }

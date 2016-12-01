@@ -10,25 +10,28 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="icon_appli.png">
+    <title>Configurateur</title>
 </head>
 
 <body class="container">
     <nav class="nav-extended grey darken-4">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><i class="material-icons right amber-text text-accent-4">settings</i><span class="amber-text text-accent-4">A</span>pplication de <span class="amber-text text-accent-4">C</span>onfiguration</a>
+            <a href="appli.html" class="brand-logo"><i class="material-icons right amber-text text-accent-4 hide-on-med-and-down">settings</i><span class="amber-text text-accent-4">A</span>pplication de <span class="amber-text text-accent-4">C</span>onfiguration</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li class="active black"><a class="amber-text text-accent-4" href="#"><i class="material-icons right amber-text text-accent-4">view_module</i><span class="amber-text text-accent-4">C</span>onfigurateur</a></li>
-                <li><a href="#"><i class="material-icons right amber-text text-accent-4">info</i><span class="amber-text text-accent-4">A</span>ide</a></li>
+                <li class="active black"><a class="amber-text text-accent-4" href="appli.html"><i class="material-icons right amber-text text-accent-4">view_module</i><span class="amber-text text-accent-4">C</span>onfigurateur</a></li>
+                <li><a href="aide.html"><i class="material-icons right amber-text text-accent-4">info</i><span class="amber-text text-accent-4">A</span>ide</a></li>
             </ul>
             <ul class="side-nav grey darken-4" id="mobile-demo">
-                <li class="active black"><a class="amber-text text-accent-4" href="#"><i class="material-icons right amber-text text-accent-4">view_module</i><span class="amber-text text-accent-4">C</span>onfigurateur</a></li>
-                <li><a class="grey-text text-lighten-3" href="#"><i class="material-icons right amber-text text-accent-4">info</i><span class="amber-text text-accent-4">A</span>ide</a></li>
+                <li class="active black"><a class="amber-text text-accent-4" href="appli.html"><i class="material-icons right amber-text text-accent-4">view_module</i><span class="amber-text text-accent-4">C</span>onfigurateur</a></li>
+                <li><a class="grey-text text-lighten-3" href="aide.html"><i class="material-icons right amber-text text-accent-4">info</i><span class="amber-text text-accent-4">A</span>ide</a></li>
             </ul>
 
             <ul class="tabs tabs-transparent">
                 <li class="tab"><a class="active" href="#widget">Widgets</a></li>
-                <li class="tab"><a href="#dispo">Disposition</a></li>
+                <li class="tab"><a href="#dispo">Affichage</a></li>
             </ul>
         </div>
     </nav>
@@ -323,46 +326,90 @@
     </div>
 
     <div id="dispo" class="col s12">
-        <div class="container">
-            <div id="dispo" class="col 2">
-                <div class="row">
+        <div class="row center">
+            <div class="col s12">
+                <h4><span class="amber-text text-accent-4">D</span>isposition des <span class="amber-text text-accent-4">W</span>idgets</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div class="displayInlineRadio left">
+                    <p>
+                        <input name="display" type="radio" id="col1" />
+                        <label for="col1">Colonne 1</label>
+                    </p>
+                    <p>
+                        <input name="display" type="radio" id="col2" />
+                        <label for="col2">Colonne 2</label>
+                    </p>
+                    <p>
+                        <input name="display" type="radio" id="col3" />
+                        <label for="col3">Colonne 3</label>
+                    </p>
+                    <p>
+                        <input name="display" type="radio" id="bot" />
+                        <label for="bot">Bannière</label>
+                    </p>
+                </div>
+                <div class="right">
                     <label>Widget RER</label>
                     <div class="switch">
-                        <label>Off<input type="checkbox" checked><span class="lever"></span>On</label>
-                    </div>
-                    <label>Widget Météo</label>
-                    <div class="switch">
-                        <label>Off<input type="checkbox" checked><span class="lever"></span>On</label>
-                    </div>
-                    <label>Widget Traffic info</label>
-                    <div class="switch">
-                        <label>Off<input type="checkbox" checked><span class="lever"></span>On</label>
-                    </div>
-                    <label>Widget Gitlab</label>
-                    <div class="switch">
-                        <label>Off<input type="checkbox" checked><span class="lever"></span>On</label>
+                        <label>Off<input type="checkbox"><span class="lever"></span>On</label>
                     </div>
                 </div>
             </div>
-
-            <div id="dispo" class="col 2">
-                <div class="row">
-                    <label>Widget Video</label>
+            <div class="col s6">
+                <label>Widget Video</label>
+                <div class="switch">
+                    <label>Off<input type="checkbox"><span class="lever"></span>On</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div class="right">
+                    <label>Widget Météo</label>
                     <div class="switch">
-                        <label>Off<input type="checkbox" checked><span class="lever"></span>On</label>
+                        <label>Off<input type="checkbox"><span class="lever"></span>On</label>
                     </div>
-                    <label>Widget Digital</label>
+                </div>
+            </div>
+            <div class="col s6">
+                <label>Widget Digital</label>
+                <div class="switch">
+                    <label>Off<input type="checkbox"><span class="lever"></span>On</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div class="right">
+                    <label>Widget Traffic info</label>
                     <div class="switch">
-                        <label>Off<input type="checkbox" checked><span class="lever"></span>On</label>
+                        <label>Off<input type="checkbox"><span class="lever"></span>On</label>
                     </div>
-                    <label>Widget Stock</label>
+                </div>
+            </div>
+            <div class="col s6">
+                <label>Widget Stock</label>
+                <div class="switch">
+                    <label>Off<input type="checkbox"><span class="lever"></span>On</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <div class="right">
+                    <label>Widget Gitlab</label>
                     <div class="switch">
-                        <label>Off<input type="checkbox" checked><span class="lever"></span>On</label>
+                        <label>Off<input type="checkbox"><span class="lever"></span>On</label>
                     </div>
-                    <label>Widget Ticker</label>
-                    <div class="switch">
-                        <label>Off<input type="checkbox" checked><span class="lever"></span>On</label>
-                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <label>Widget Ticker</label>
+                <div class="switch">
+                    <label>Off<input type="checkbox"><span class="lever"></span>On</label>
                 </div>
             </div>
         </div>
