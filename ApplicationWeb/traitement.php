@@ -24,4 +24,7 @@ if (isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['sta
     }
     $xml = simplexml_load_file($fichier);
     print_r($xml);
+    echo $xml;
+    /*regexp
+    //*/
 }
