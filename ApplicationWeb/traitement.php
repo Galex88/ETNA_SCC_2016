@@ -26,7 +26,7 @@ switch ($_POST['widget']) {
 	<Fiels>
 		<field>
 			<id>323</id>
-			<fieldDefinitionIdentifier>'$station'</fieldDefinitionIdentifier>
+			<fieldDefinitionIdentifier>$station</fieldDefinitionIdentifier>
 		</field>
 		<field>
 			<id>326</id>
@@ -38,7 +38,7 @@ switch ($_POST['widget']) {
 		</field>
 		<field>
 			<id>330</id>
-			<fieldDefinitionIdentifier>'$station'</fieldDefinitionIdentifier>
+			<fieldDefinitionIdentifier>$station'</fieldDefinitionIdentifier>
 		</field>
 		<field>
 			<id>333</id>
@@ -50,7 +50,8 @@ switch ($_POST['widget']) {
 		</field>
 	</Fiels>
 </Version>
-        XML;
+        <?php>XML;
+        $xml_string = $xml->saveXML();
 		break;
 
 	case 'meteo':
@@ -60,7 +61,26 @@ switch ($_POST['widget']) {
         $longitude = $_POST['longitude'];
         $adresse = $_POST['station'];
 		$widget = $_POST['widget'];
-        
+        $xmlstr = <<<XML
+<?xml version='1.0' standalone='yes'?>
+<Version media-type="application/vnd.ez.api.Version+xml" href="/api/ezp/v2/content/objects/99/versions/1">
+	<Fiels>
+		<field>
+			<id>341</id>
+			<fieldDefinitionIdentifier>$station</fieldDefinitionIdentifier>
+		</field>
+		<field>
+			<id>342</id>
+			<fieldValue>
+				<value key="latitude">$latitude</value>
+				<value key="longitude">$longitude</value>
+				<value key="address">$adresse</value>
+			</fieldValue>
+		</field>
+	</Fiels>
+</Version>
+        <?php>XML;
+        $xml_string = $xml->saveXML();
 	 	break;
 
 	case 'traffic':
@@ -70,6 +90,25 @@ switch ($_POST['widget']) {
         $longitude = $_POST['longitude'];
         $adresse = $_POST['station'];
 		$widget = $_POST['widget'];
-        
+        $xmlstr = <<<XML
+<?xml version='1.0' standalone='yes'?>
+<Version media-type="application/vnd.ez.api.Version+xml" href="/api/ezp/v2/content/objects/99/versions/1">
+	<Fiels>
+		<field>
+			<id>337</id>
+			<fieldDefinitionIdentifier>$station</fieldDefinitionIdentifier>
+		</field>
+		<field>
+			<id>338</id>
+			<fieldValue>
+				<value key="latitude">$latitude</value>
+				<value key="longitude">$longitude</value>
+				<value key="address">$adresse</value>
+			</fieldValue>
+		</field>
+	</Fiels>
+</Version>
+        <?php>XML;
+        $xml_string = $xml->saveXML();
         break;
 }
