@@ -20,15 +20,37 @@ switch ($_POST['widget']) {
         $adresse = $_POST['station1'];
         $adresse2 = $_POST['station2'];
 		$widget = $_POST['widget'];
-        $xml = simplexml_load_file($fichier);
-        $wtitle = ($xml->Fields->field[0]->fieldDefinitionIdentifier[0]);
-        print($wtitle);
-        $wlat = ($xml->Fields->field[3]->fieldValue[0]->value[0]);
-        print(" Lattitude".$wlat);
-        $wlon = ($xml->Fields->field[3]->fieldValue[0]->value[1]);
-        print(" longitude".$wlon);
-        $wstation = ($xml->Fields->field[3]->fieldDefinitionIdentifier[0]);
-        print(" ".$wstation);
+        $xmlstr = <<<XML
+<?xml version='1.0' standalone='yes'?>
+<Version media-type="application/vnd.ez.api.Version+xml" href="/api/ezp/v2/content/objects/99/versions/1">
+	<Fiels>
+		<field>
+			<id>323</id>
+			<fieldDefinitionIdentifier>'$station'</fieldDefinitionIdentifier>
+		</field>
+		<field>
+			<id>326</id>
+			<fieldValue>
+				<value key="latitude">$latitude</value>
+				<value key="longitude">$longitude</value>
+				<value key="address">$adresse</value>
+			</fieldValue>
+		</field>
+		<field>
+			<id>330</id>
+			<fieldDefinitionIdentifier>'$station'</fieldDefinitionIdentifier>
+		</field>
+		<field>
+			<id>333</id>
+			<fieldValue>
+				<value key="latitude">$latitude2</value>
+				<value key="longitude">$longitude2</value>
+				<value key="address">$adresse2</value>
+			</fieldValue>
+		</field>
+	</Fiels>
+</Version>
+        XML;
 		break;
 
 	case 'meteo':
@@ -38,10 +60,7 @@ switch ($_POST['widget']) {
         $longitude = $_POST['longitude'];
         $adresse = $_POST['station'];
 		$widget = $_POST['widget'];
-        $xml = simplexml_load_file($fichier);
-        $wtitle = ($xml->Fields->field[0]->fieldDefinitionIdentifier[0]);
-        print($wtitle);
-
+        
 	 	break;
 
 	case 'traffic':
@@ -51,12 +70,6 @@ switch ($_POST['widget']) {
         $longitude = $_POST['longitude'];
         $adresse = $_POST['station'];
 		$widget = $_POST['widget'];
-        $xml = simplexml_load_file($fichier);
-        $wtitle = ($xml->Fields->field[0]->fieldDefinitionIdentifier[0]);
-        print($wtitle);
-
+        
+        break;
 }
-
-
-//$wlat = ($xml->Fields->field[3]->fieldValue[0]);
-//print(" ".$wlat);
