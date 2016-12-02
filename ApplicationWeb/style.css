@@ -1,3 +1,11 @@
+.tabs.tabs-transparent .tab a.active {
+  color: #ffab00;
+}
+
+.tabs.tabs-transparent .indicator {
+  background-color: #ffab00;
+}
+
 .input-field .prefix.active,
 input:not([type]):focus:not([readonly]) + label,
 input[type=text]:focus:not([readonly]) + label,
@@ -49,4 +57,22 @@ textarea.materialize-textarea:focus:not([readonly])
 .displayInlineRadio
 {
     display: inline-flex;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:before,
+[type="radio"].with-gap:checked + label:after
+{
+    border: 2px solid #ffab00;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after 
+{
+    background-color: #ffab00;
+}
+
+.divDroiteSwitch
+{
+    border-left: 1px solid black;
 }
