@@ -38,7 +38,11 @@ switch ($_POST['widget']) {
 		</field>
 		<field>
 			<id>330</id>
+<<<<<<< HEAD
 			<fieldDefinitionIdentifier>$station'</fieldDefinitionIdentifier>
+=======
+			<fieldDefinitionIdentifier>$station</fieldDefinitionIdentifier>
+>>>>>>> origin/master
 		</field>
 		<field>
 			<id>333</id>
@@ -50,8 +54,14 @@ switch ($_POST['widget']) {
 		</field>
 	</Fiels>
 </Version>
+<<<<<<< HEAD
         <?php>XML;
         $xml_string = $xml->saveXML();
+=======
+        XML;
+        <?php>
+        /*faire un replace de $station par $station*/
+>>>>>>> origin/master
 		break;
 
 	case 'meteo':
