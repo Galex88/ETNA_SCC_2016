@@ -26,7 +26,7 @@ switch ($_POST['widget']) {
 	<Fiels>
 		<field>
 			<id>323</id>
-			<fieldDefinitionIdentifier>'$station'</fieldDefinitionIdentifier>
+			<fieldDefinitionIdentifier>$station</fieldDefinitionIdentifier>
 		</field>
 		<field>
 			<id>326</id>
@@ -38,7 +38,7 @@ switch ($_POST['widget']) {
 		</field>
 		<field>
 			<id>330</id>
-			<fieldDefinitionIdentifier>'$station'</fieldDefinitionIdentifier>
+			<fieldDefinitionIdentifier>$station</fieldDefinitionIdentifier>
 		</field>
 		<field>
 			<id>333</id>
@@ -51,6 +51,8 @@ switch ($_POST['widget']) {
 	</Fiels>
 </Version>
         XML;
+        <?php>
+        /*faire un replace de $station par $station*/
 		break;
 
 	case 'meteo':
